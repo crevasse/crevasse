@@ -155,7 +155,7 @@
       }
     ]
   },
-  "default_policy":{
+  "rules_policy":{
     "Proxy":"group_a"
   },
   "managed_info":{

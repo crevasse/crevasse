@@ -14,7 +14,7 @@ class Kernel
     public $group_info = null;
     public $output_info = null;
     public $proxy_info = [];
-    public $default_policy = [];
+    public $rules_policy = [];
     public $enable_info = [];
     public $managed_info = [];
     public $convert_info = [];
@@ -211,9 +211,9 @@ class Kernel
         }
     }
 
-    public function replaceDefaultPolicy()
+    public function replaceRulePolicy()
     {
-        if(!isset($this->convert_info['rules']) || !isset($this->default_policy)) {
+        if(!isset($this->convert_info['rules']) || !isset($this->rules_policy)) {
             new KernelException([
                 'class'=> __CLASS__,
                 'function'=>__FUNCTION__,
@@ -223,8 +223,8 @@ class Kernel
         }
         $this->splitHashValue($this->convert_info['rules']);
         for ($i=0; $i<count($this->hash_value); $i++) {
-            for ($j=0; $j<count($this->default_policy); $j++) {
-                foreach ($this->default_policy as $item => $val) {
+            for ($j=0; $j<count($this->rules_policy); $j++) {
+                foreach ($this->rules_policy as $item => $val) {
                     if ($item === $this->hash_value[$i]['policy']) {
                         $this->hash_value[$i]['policy'] = $val;
                         $this->convert_info['rules'][$this->hash_key[$i]] = $this->hash_value[$i];

@@ -33,7 +33,7 @@ class Parse extends Kernel
                 $this->config_type = 'url_config';
                 $this->getUrlResponse($config_data);
                 $this->parseContent($this->curl_response);
-                $this->replaceDefaultPolicy();
+                $this->replaceRulePolicy();
                 $this->setPatchConvert();
                 $this->setEnableInfo();
                 $this->getOutputResult();
@@ -42,7 +42,7 @@ class Parse extends Kernel
                 $this->config_type = 'raw_config';
                 $this->config_data = json_decode(base64_decode($config_data),true);
                 $this->parseContent($this->config_data);
-                $this->replaceDefaultPolicy();
+                $this->replaceRulePolicy();
                 $this->setPatchConvert();
                 $this->setEnableInfo();
                 $this->getOutputResult();
