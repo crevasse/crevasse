@@ -162,8 +162,8 @@
     "interval":86400,
     "strict":"true"
   },
-  "import_type":{
-    "label_list":[
+  "enable_info":{
+    "label_type":[
       "label",
       "general",
       "skip-proxy",
@@ -178,7 +178,7 @@
       "url_rewrite",
       "mitm"
     ],
-    "policy_list":[
+    "rules_type":[
       "IP-CIDR6",
       "PROCESS-NAME",
       "URL-REGEX",

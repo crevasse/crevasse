@@ -15,7 +15,7 @@ class Kernel
     public $output_info = null;
     public $proxy_info = [];
     public $default_policy = [];
-    public $import_type = [];
+    public $enable_info = [];
     public $managed_info = [];
     public $convert_info = [];
     public $convert_patch = [];
@@ -245,18 +245,18 @@ class Kernel
         return $this->convert_info;
     }
 
-    public function setImportType()
+    public function setEnableInfo()
     {
         $this->splitHashValue($this->convert_info);
         for ($i=0; $i<count($this->hash_key); $i++) {
-            if (!in_array($this->hash_key[$i],$this->import_type['label_list'])) {
+            if (!in_array($this->hash_key[$i],$this->enable_info['label_type'])) {
                 $this->convert_info[$this->hash_key[$i]] = null;
             }
         }
         $convert_info = $this->convert_info['rules'];
         $this->splitHashValue($convert_info);
         for ($i=0; $i<count($this->hash_value); $i++) {
-            if (!in_array($this->hash_value[$i]['type'],$this->import_type['policy_list'])) {
+            if (!in_array($this->hash_value[$i]['type'],$this->enable_info['rules_type'])) {
                 $this->hash_value[$i] = null;
                 $this->convert_info['rules'][$this->hash_key[$i]] = $this->hash_value[$i];
             }

@@ -35,7 +35,7 @@ class Parse extends Kernel
                 $this->parseContent($this->curl_response);
                 $this->replaceDefaultPolicy();
                 $this->setPatchConvert();
-                $this->setImportType();
+                $this->setEnableInfo();
                 $this->getOutputResult();
                 break;
             case is_object(json_decode(base64_decode($config_data))):
@@ -44,7 +44,7 @@ class Parse extends Kernel
                 $this->parseContent($this->config_data);
                 $this->replaceDefaultPolicy();
                 $this->setPatchConvert();
-                $this->setImportType();
+                $this->setEnableInfo();
                 $this->getOutputResult();
                 break;
             default:
