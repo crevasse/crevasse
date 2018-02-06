@@ -440,6 +440,7 @@ class Kernel
     public function setRuleProxy()
     {
         if (isset($this->server_info)) {
+            $this->output_info.= "\r\n";
             $this->setRuleLabel('proxy');
             $this->output_info.=$this->server_info."\r\n";
         }
