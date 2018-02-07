@@ -236,7 +236,7 @@ class Kernel
             $convert_patch = $this->convert_patch : $convert_patch = [];
         $this->convert_info = array_replace_recursive($convert_info,$convert_patch);
         isset($this->convert_info['rules']) ?
-            asort($this->convert_info) : false;
+            asort($this->convert_info['rules']) : false;
         return $this->convert_info;
     }
 
