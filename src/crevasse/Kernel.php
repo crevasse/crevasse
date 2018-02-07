@@ -126,27 +126,20 @@ class Kernel
                     $this->group_info = rtrim($this->group_info,', ');
                     $this->group_info.="\r\n";
                     break;
-                case $this->group_list[$i]['type'] === 'url-test':
-                    $this->convertToString('group', $this->group_list[$i]['name'], ' = ');
-                    $this->convertToString('group', $this->group_list[$i]['type'], ', ');
-                    $this->convertToString('list', $this->group_list[$i]['list'], ', ');
-                    $this->convertToString('group_option', $this->group_list[$i]['option'], ', ');
-                    $this->group_info = rtrim($this->group_info,', ');
-                    $this->group_info.="\r\n";
-                    break;
-                case $this->group_list[$i]['type'] === 'fallback':
-                    $this->convertToString('group', $this->group_list[$i]['name'], ' = ');
-                    $this->convertToString('group', $this->group_list[$i]['type'], ', ');
-                    $this->convertToString('list', $this->group_list[$i]['list'], ', ');
-                    $this->group_info = rtrim($this->group_info,', ');
-                    $this->group_info.="\r\n";
-                    break;
                 case $this->group_list[$i]['type'] === 'ssid':
                     $this->convertToString('group', $this->group_list[$i]['name'], ' = ');
                     $this->convertToString('group', $this->group_list[$i]['type'], ', ');
                     $this->convertToString('group', $this->group_list[$i]['default'], ', ','default = ');
                     $this->convertToString('group', $this->group_list[$i]['cellular'], ', ','cellular = ');
                     $this->convertToString('ssid', $this->group_list[$i]['list'], ', ');
+                    $this->group_info = rtrim($this->group_info,', ');
+                    $this->group_info.="\r\n";
+                    break;
+                case $this->group_list[$i]['type'] === 'url-test' || 'fallback':
+                    $this->convertToString('group', $this->group_list[$i]['name'], ' = ');
+                    $this->convertToString('group', $this->group_list[$i]['type'], ', ');
+                    $this->convertToString('list', $this->group_list[$i]['list'], ', ');
+                    $this->convertToString('group_option', $this->group_list[$i]['option'], ', ');
                     $this->group_info = rtrim($this->group_info,', ');
                     $this->group_info.="\r\n";
                     break;

@@ -156,7 +156,12 @@
     ]
   },
   "rules_policy":{
-    "Proxy":"group_a"
+    "Proxy":"group_a",
+    "ProxyHTTP":"group_b",
+    "SelectGroup":"group_c",
+    "AutoTestGroup":"group_d",
+    "SSIDGroup":"group_e",
+    "ProxyHTTPS":"group_a"
   },
   "managed_info":{
     "interval":86400,
@@ -190,7 +195,7 @@
     ]
   },
   "output_format":"surge",
-  "convert_info":"https://raw.githubusercontent.com/sparaxis/sparaxis/master/example/convert.json",
-  "convert_patch":"https://raw.githubusercontent.com/sparaxis/sparaxis/master/example/patch.json",
+  "convert_info":"https://raw.githubusercontent.com/crevasse/readme/master/example/convert.json",
+  "convert_patch":"https://raw.githubusercontent.com/crevasse/readme/master/example/patch.json",
   "module_url":"https://google.com/module"
 }
