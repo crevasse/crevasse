@@ -152,7 +152,7 @@ class Kernel
     {
         if (isset($type) && isset($object) && isset($content)) {
             switch ($type) {
-                case $type == 'server' || $type == 'group' || $type == 'rules':
+                case $type == 'server' || $type == 'group' || $type == 'rules' || $type == 'module':
                     $this->{$object}.= $beforeCombine.$content.$afterCombine;
                     break;
                 case $type == 'server_option' || $type == 'group_option':
