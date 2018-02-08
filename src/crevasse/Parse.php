@@ -20,7 +20,7 @@ class Parse extends Kernel
 
     public function __construct($user_info)
     {
-        if (!isset($config_data)) {
+        if (!isset($user_info)) {
             new ParseException([
                 'class'=> __CLASS__,
                 'function'=>__FUNCTION__,
