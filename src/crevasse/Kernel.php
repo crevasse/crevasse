@@ -69,35 +69,35 @@ class Kernel
         for ($i=0; $i<count($this->server_list); $i++) {
             switch ($this->server_list[$i]) {
                 case $this->server_list[$i]['type'] === 'custom':
-                    $this->convertToString('server', $this->server_list[$i]['name'], ' = ');
-                    $this->convertToString('server', $this->server_list[$i]['type'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['server'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['port'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['method'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['password'], ', ');
-                    $this->convertToString('module', $this->server_list[$i]['module'], ', ');
-                    $this->convertToString('server_option', $this->server_list[$i]['option'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['name'], ' = ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['type'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['server'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['port'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['method'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['password'], ', ');
+                    $this->convertToString('module', 'server_info', $this->module_url, ', ');
+                    $this->convertToString('server_option', 'server_info', $this->server_list[$i]['option'], ', ');
                     $this->server_info = rtrim($this->server_info,', ');
                     $this->server_info.="\r\n";
                     break;
                 case $this->server_list[$i]['type'] === 'https' || 'socks5-tls':
-                    $this->convertToString('server', $this->server_list[$i]['name'], ' = ');
-                    $this->convertToString('server', $this->server_list[$i]['type'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['server'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['port'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['username'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['password'], ', ');
-                    $this->convertToString('server_option', $this->server_list[$i]['option'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['name'], ' = ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['type'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['server'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['port'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['username'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['password'], ', ');
+                    $this->convertToString('server_option', 'server_info', $this->server_list[$i]['option'], ', ');
                     $this->server_info = rtrim($this->server_info,', ');
                     $this->server_info.="\r\n";
                     break;
                 case $this->server_list[$i]['type'] === 'http' || 'socks5':
-                    $this->convertToString('server', $this->server_list[$i]['name'], ' = ');
-                    $this->convertToString('server', $this->server_list[$i]['type'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['server'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['port'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['username'], ', ');
-                    $this->convertToString('server', $this->server_list[$i]['password'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['name'], ' = ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['type'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['server'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['port'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['username'], ', ');
+                    $this->convertToString('server', 'server_info', $this->server_list[$i]['password'], ', ');
                     $this->server_info = rtrim($this->server_info,', ');
                     $this->server_info.="\r\n";
                     break;
@@ -120,26 +120,26 @@ class Kernel
         for ($i=0; $i<count($this->group_list); $i++) {
             switch ($this->group_list[$i]) {
                 case $this->group_list[$i]['type'] === 'select':
-                    $this->convertToString('group', $this->group_list[$i]['name'], ' = ');
-                    $this->convertToString('group', $this->group_list[$i]['type'], ', ');
-                    $this->convertToString('list', $this->group_list[$i]['list'], ', ');
+                    $this->convertToString('group', 'group_info', $this->group_list[$i]['name'], ' = ');
+                    $this->convertToString('group', 'group_info', $this->group_list[$i]['type'], ', ');
+                    $this->convertToString('list', 'group_info', $this->group_list[$i]['list'], ', ');
                     $this->group_info = rtrim($this->group_info,', ');
                     $this->group_info.="\r\n";
                     break;
                 case $this->group_list[$i]['type'] === 'ssid':
-                    $this->convertToString('group', $this->group_list[$i]['name'], ' = ');
-                    $this->convertToString('group', $this->group_list[$i]['type'], ', ');
-                    $this->convertToString('group', $this->group_list[$i]['default'], ', ','default = ');
-                    $this->convertToString('group', $this->group_list[$i]['cellular'], ', ','cellular = ');
-                    $this->convertToString('ssid', $this->group_list[$i]['list'], ', ');
+                    $this->convertToString('group', 'group_info', $this->group_list[$i]['name'], ' = ');
+                    $this->convertToString('group', 'group_info', $this->group_list[$i]['type'], ', ');
+                    $this->convertToString('group', 'group_info', $this->group_list[$i]['default'], ', ','default = ');
+                    $this->convertToString('group', 'group_info', $this->group_list[$i]['cellular'], ', ','cellular = ');
+                    $this->convertToString('ssid', 'group_info', $this->group_list[$i]['list'], ', ');
                     $this->group_info = rtrim($this->group_info,', ');
                     $this->group_info.="\r\n";
                     break;
                 case $this->group_list[$i]['type'] === 'url-test' || 'fallback':
-                    $this->convertToString('group', $this->group_list[$i]['name'], ' = ');
-                    $this->convertToString('group', $this->group_list[$i]['type'], ', ');
-                    $this->convertToString('list', $this->group_list[$i]['list'], ', ');
-                    $this->convertToString('group_option', $this->group_list[$i]['option'], ', ');
+                    $this->convertToString('group', 'group_info', $this->group_list[$i]['name'], ' = ');
+                    $this->convertToString('group', 'group_info', $this->group_list[$i]['type'], ', ');
+                    $this->convertToString('list', 'group_info', $this->group_list[$i]['list'], ', ');
+                    $this->convertToString('group_option', 'group_info', $this->group_list[$i]['option'], ', ');
                     $this->group_info = rtrim($this->group_info,', ');
                     $this->group_info.="\r\n";
                     break;
@@ -148,47 +148,32 @@ class Kernel
         }
     }
 
-    public function convertToString($type=null, $content=null, $afterCombine=null, $beforeCombine=null)
+    public function convertToString($type=null, $object=null, $content=null, $afterCombine=null, $beforeCombine=null)
     {
-        if (isset($type) && isset($content)) {
+        if (isset($type) && isset($object) && isset($content)) {
             switch ($type) {
-                case 'server':
-                    $this->server_info.= $beforeCombine.$content.$afterCombine;
+                case 'server' || 'group' || 'rules':
+                    $this->{$object}.= $beforeCombine.$content.$afterCombine;
                     break;
-                case 'module':
-                    $this->server_info.= $beforeCombine.$this->module_url.$afterCombine;
-                    break;
-                case 'group':
-                    $this->group_info.= $beforeCombine.$content.$afterCombine;
-                    break;
-                case 'server_option':
+                case 'server_option' || 'group_option':
                     foreach ($content as $key => $value) {
-                        $this->server_info.= $beforeCombine.$key.' = '.$value.$afterCombine;
+                        $this->{$object}.= $beforeCombine.$key.' = '.$value.$afterCombine;
                     }
-                    $this->server_info = rtrim($this->server_info,$afterCombine);
-                    break;
-                case 'group_option':
-                    foreach ($content as $key => $value) {
-                        $this->group_info.= $beforeCombine.$key.' = '.$value.$afterCombine;
-                    }
-                    $this->group_info = rtrim($this->group_info,$afterCombine);
+                    $this->{$object} = rtrim($this->{$object},$afterCombine);
                     break;
                 case 'list':
                     foreach ($content as $key => $value) {
-                        $this->group_info.= $value.$afterCombine;
+                        $this->{$object}.= $beforeCombine.$value.$afterCombine;
                     }
                     break;
                 case 'ssid':
                     foreach ($content as $key => $value) {
-                        $this->group_info.= $beforeCombine."\"{$key}\" = ".$value.$afterCombine;
+                        $this->{$object}.= $beforeCombine."\"{$key}\" = ".$value.$afterCombine;
                     }
-                    break;
-                case 'rules':
-                    $this->output_info.= $beforeCombine.$content.$afterCombine;
                     break;
                 case 'mitm':
                     foreach ($content as $key => $value) {
-                        $this->output_info.= $key.' = '.$value.$afterCombine;
+                        $this->{$object}.= $key.' = '.$value.$afterCombine;
                     }
                     break;
                 default:
@@ -211,7 +196,7 @@ class Kernel
                 'class'=> __CLASS__,
                 'function'=>__FUNCTION__,
                 'message'=> 'convert_info rules is null.',
-                'status'=>200
+                'status'=>500
             ]);
         }
         $this->splitHashValue($this->convert_info['rules']);
@@ -299,11 +284,11 @@ class Kernel
             $this->setRuleLabel('rule');
             $this->splitHashValue($this->convert_info['rules']);
             for ($i=0; $i < count($this->hash_key); $i++) {
-                $this->convertToString('rules', $this->hash_value[$i]['type'], ',');
-                $this->convertToString('rules', $this->hash_value[$i]['value'], ',');
-                $this->convertToString('rules', $this->hash_value[$i]['policy']);
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['type'], ',');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['value'], ',');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['policy']);
                 $this->hash_value[$i]['option'] ?
-                    $this->convertToString('rules', $this->hash_value[$i]['option'], "\r\n", ',')
+                    $this->convertToString('rules', 'output_info', $this->hash_value[$i]['option'], "\r\n", ',')
                     : $this->output_info.= "\r\n";
             }
         }
@@ -314,11 +299,11 @@ class Kernel
         if (isset($this->convert_info['geoip'])) {
             $this->splitHashValue($this->convert_info['geoip']);
             for ($i=0; $i < count($this->hash_key); $i++) {
-                $this->convertToString('rules', $this->hash_value[$i]['type'], ',');
-                $this->convertToString('rules', $this->hash_value[$i]['region'], ',');
-                $this->convertToString('rules', $this->hash_value[$i]['policy']);
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['type'], ',');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['region'], ',');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['policy']);
                 $this->hash_value[$i]['option'] ?
-                    $this->convertToString('rules', $this->hash_value[$i]['option'], "\r\n", ',')
+                    $this->convertToString('rules', 'output_info', $this->hash_value[$i]['option'], "\r\n", ',')
                     : $this->output_info.= "\r\n";
             }
         }
@@ -329,10 +314,10 @@ class Kernel
         if (isset($this->convert_info['final'])) {
             $this->splitHashValue($this->convert_info['final']);
             for ($i=0; $i < count($this->hash_key); $i++) {
-                $this->convertToString('rules', $this->hash_value[$i]['type'], ',');
-                $this->convertToString('rules', $this->hash_value[$i]['policy']);
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['type'], ',');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['policy']);
                 $this->hash_value[$i]['option'] ?
-                    $this->convertToString('rules', $this->hash_value[$i]['option'], "\r\n", ',')
+                    $this->convertToString('rules', 'output_info', $this->hash_value[$i]['option'], "\r\n", ',')
                     : $this->output_info.= "\r\n";
             }
             $this->output_info.= "\r\n";
@@ -345,8 +330,8 @@ class Kernel
             $this->setRuleLabel('host');
             $this->splitHashValue($this->convert_info['host']);
             for ($i=0; $i < count($this->hash_key); $i++) {
-                $this->convertToString('rules', $this->hash_value[$i]['host'], ' = ');
-                $this->convertToString('rules', $this->hash_value[$i]['redirect'], "\r\n");
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['host'], ' = ');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['redirect'], "\r\n");
             }
             $this->output_info.= "\r\n";
         }
@@ -358,9 +343,9 @@ class Kernel
             $this->setRuleLabel('url_rewrite');
             $this->splitHashValue($this->convert_info['url_rewrite']);
             for ($i=0; $i < count($this->hash_key); $i++) {
-                $this->convertToString('rules', $this->hash_value[$i]['pattern'], ' ');
-                $this->convertToString('rules', $this->hash_value[$i]['replace'], ' ');
-                $this->convertToString('rules', $this->hash_value[$i]['policy'], "\r\n");
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['pattern'], ' ');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['replace'], ' ');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['policy'], "\r\n");
             }
             $this->output_info.= "\r\n";
         }
@@ -372,11 +357,11 @@ class Kernel
             $this->setRuleLabel('header_rewrite');
             $this->splitHashValue($this->convert_info['header_rewrite']);
             for ($i=0; $i < count($this->hash_key); $i++) {
-                $this->convertToString('rules', $this->hash_value[$i]['value'], ' ');
-                $this->convertToString('rules', $this->hash_value[$i]['action'], ' ');
-                $this->convertToString('rules', $this->hash_value[$i]['header_name'], ' ');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['value'], ' ');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['action'], ' ');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['header_name'], ' ');
                 $this->hash_value[$i]['header_value'] ?
-                    $this->convertToString('rules', $this->hash_value[$i]['header_value'], "\r\n")
+                    $this->convertToString('rules', 'output_info', $this->hash_value[$i]['header_value'], "\r\n")
                     : $this->output_info.= "\r\n";
             }
             $this->output_info.= "\r\n";
@@ -401,8 +386,8 @@ class Kernel
             $this->splitHashValue($this->convert_info['mitm']['option']);
             for ($i=0; $i<count($this->hash_key); $i++) {
                 if(isset($this->hash_value[$i]['name']) || isset($this->hash_value[$i]['value'])) {
-                    $this->convertToString('rules', $this->hash_value[$i]['name'], ' = ');
-                    $this->convertToString('rules', $this->hash_value[$i]['value'], "\r\n");
+                    $this->convertToString('rules', 'output_info', $this->hash_value[$i]['name'], ' = ');
+                    $this->convertToString('rules', 'output_info', $this->hash_value[$i]['value'], "\r\n");
                 }
             }
         }

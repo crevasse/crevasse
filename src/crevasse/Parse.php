@@ -8,8 +8,8 @@ use Crevasse\ParseException;
 
 class Parse extends Kernel
 {
-    public $config_type = null;
-    public $config_data = [];
+    public $info_type = null;
+    public $user_info = [];
     public $curl_response = [];
     public $output_info = null;
 
@@ -18,30 +18,30 @@ class Parse extends Kernel
         return (string) $this->output_info;
     }
 
-    public function __construct($config_data)
+    public function __construct($user_info)
     {
         if (!isset($config_data)) {
             new ParseException([
                 'class'=> __CLASS__,
                 'function'=>__FUNCTION__,
-                'message'=> 'config_data is null!',
+                'message'=> 'user_info is null!',
                 'status'=>200
             ]);
         }
-        switch ($config_data) {
-            case preg_match('(http://|https://)',$config_data) == true:
-                $this->config_type = 'url_config';
-                $this->getUrlResponse($config_data);
+        switch ($user_info) {
+            case preg_match('(http://|https://)',$user_info) == true:
+                $this->info_type = 'url_info';
+                $this->getUrlResponse($user_info);
                 $this->parseContent($this->curl_response);
                 $this->replaceRulePolicy();
                 $this->setPatchConvert();
                 $this->setEnableInfo();
                 $this->getOutputResult();
                 break;
-            case is_object(json_decode(base64_decode($config_data))):
-                $this->config_type = 'raw_config';
-                $this->config_data = json_decode(base64_decode($config_data),true);
-                $this->parseContent($this->config_data);
+            case is_object(json_decode(base64_decode($user_info))):
+                $this->info_type = 'raw_info';
+                $this->user_info = json_decode(base64_decode($user_info),true);
+                $this->parseContent($this->user_info);
                 $this->replaceRulePolicy();
                 $this->setPatchConvert();
                 $this->setEnableInfo();
@@ -78,9 +78,9 @@ class Parse extends Kernel
         return false;
     }
 
-    public function parseContent(array $config_data)
+    public function parseContent(array $user_info)
     {
-        if (count($config_data) > 50) {
+        if (count($user_info) > 50) {
             new ParseException([
                 'class'=>__CLASS__,
                 'method'=>__METHOD__,
@@ -88,7 +88,7 @@ class Parse extends Kernel
                 'status'=>500
             ]);
         }
-        foreach ($config_data as $item => $value) {
+        foreach ($user_info as $item => $value) {
             switch ($item) {
                 case 'convert_info':
                     $this->getUrlResponse($value) ?
