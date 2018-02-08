@@ -137,11 +137,6 @@
             <path>
               <item name="crevasse" type="b2602c69:ProjectViewProjectNode" />
               <item name="crevasse" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="example" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="crevasse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crevasse" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -206,12 +201,12 @@
       <workItem from="1517990905882" duration="727000" />
       <workItem from="1517992327871" duration="291000" />
       <workItem from="1518107548578" duration="2845000" />
-      <workItem from="1518110926049" duration="458000" />
+      <workItem from="1518110926049" duration="1537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8255000" />
+    <option name="totallyTimeSpent" value="9334000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -323,8 +318,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/crevasse/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="213" column="29" lean-forward="false" selection-start-line="213" selection-start-column="29" selection-end-line="213" selection-end-column="29" />
+        <state relative-caret-position="568">
+          <caret line="173" column="37" lean-forward="true" selection-start-line="173" selection-start-column="37" selection-end-line="173" selection-end-column="37" />
           <folding />
         </state>
       </provider>
