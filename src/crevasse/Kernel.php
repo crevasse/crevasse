@@ -272,8 +272,8 @@ class Kernel
             $this->setRuleLabel('general');
             $this->splitHashValue($this->convert_info['general']);
             for ($i=0; $i<count($this->hash_key); $i++) {
-                $this->convertToString('rules', $this->hash_value[$i]['name'], ' = ');
-                $this->convertToString('rules', $this->hash_value[$i]['value'], "\r\n");
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['name'], ' = ');
+                $this->convertToString('rules', 'output_info', $this->hash_value[$i]['value'], "\r\n");
             }
         }
     }
